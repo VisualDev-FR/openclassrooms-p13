@@ -1,5 +1,25 @@
 from django.test import Client
+from django.urls import reverse, resolve
 import pytest
+
+
+@pytest.mark.django_db
+def test_profile_urls():
+    """
+    Test that the name views and url are correct
+    """
+
+    # test index view
+    path = reverse("profiles:index")
+
+    assert path == "/profiles/"
+    assert resolve(path).view_name == "profiles:index"
+
+    # test single views
+    path = reverse("profiles:profile", args=["HeadlinesGazer"])
+
+    assert path == "/profiles/HeadlinesGazer/"
+    assert resolve(path).view_name == "profiles:profile"
 
 
 @pytest.mark.django_db

@@ -1,5 +1,25 @@
 from django.test import Client
+from django.urls import reverse, resolve
 import pytest
+
+
+@pytest.mark.django_db
+def test_letting_urls():
+    """
+    Test that the name views and url are correct
+    """
+
+    # test index view
+    path = reverse("lettings:index")
+
+    assert path == "/lettings/"
+    assert resolve(path).view_name == "lettings:index"
+
+    # test single views
+    path = reverse("lettings:letting", args=[1])
+
+    assert path == "/lettings/1/"
+    assert resolve(path).view_name == "lettings:letting"
 
 
 @pytest.mark.django_db
