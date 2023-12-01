@@ -11,3 +11,11 @@ def index(request):
     cursus in. Praesent volutpat porttitor magna, non finibus neque cursus id.
     """
     return render(request, "index.html")
+
+
+def handler404(request):
+    return render(request, "404.hmtl", status=404)
+
+
+def handler500(request):
+    return render(request, "500.hmtl", status=500)
