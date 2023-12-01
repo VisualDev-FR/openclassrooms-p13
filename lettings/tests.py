@@ -2,6 +2,32 @@ from django.test import Client
 from django.urls import reverse, resolve
 import pytest
 
+from lettings.models import Address, Letting
+
+
+@pytest.mark.django_db
+def test_letting_models():
+    """
+    Test the Letting model behavior
+    """
+
+    address = Address.objects.create(
+        number=36,
+        street="Quai des orfèvres",
+        state=75,
+        zip_code=75036,
+        country_iso_code="FR",
+    )
+
+    assert str(address) == "36 Quai des orfèvres"
+
+    letting = Letting.objects.create(
+        title="Location originale",
+        address=address,
+    )
+
+    assert str(letting) == "Location originale"
+
 
 @pytest.mark.django_db
 def test_letting_urls():

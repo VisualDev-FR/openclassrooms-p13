@@ -1,6 +1,22 @@
 from django.test import Client
 from django.urls import reverse, resolve
+from django.contrib.auth.models import User
 import pytest
+
+from profiles.models import Profile
+
+
+@pytest.mark.django_db
+def test_profile_model():
+    """
+    Test the Profile model behavior
+    """
+    profile = Profile.objects.create(
+        user=User.objects.get(pk=1),
+        favorite_city="Sartrouville",
+    )
+
+    assert str(profile) == "admin"
 
 
 @pytest.mark.django_db
