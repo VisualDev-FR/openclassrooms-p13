@@ -7,7 +7,6 @@ def test_lettings_index():
     """
     Test the global lettings view
     """
-
     client = Client()
 
     response = client.get("/lettings/")
