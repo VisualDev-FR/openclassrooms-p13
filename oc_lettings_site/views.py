@@ -18,11 +18,11 @@ def handler404(request):
     """
     Custom view displayed when a 404 error occurs.
     """
-    return render(request, "404.hmtl", status=404)
+    return render(request, "404.html", status=404)
 
 
 def handler500(request):
     """
     Custom view displayed when a 500 error occurs
     """
-    return render(request, "500.hmtl", status=500)
+    return render(request, "500.html", status=500)
