@@ -6,7 +6,6 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
@@ -17,26 +16,24 @@ class Migration(migrations.Migration):
         migrations.SeparateDatabaseAndState(
             state_operations=[
                 migrations.CreateModel(
-                    name='Profile',
+                    name="Profile",
                     fields=[
                         (
-                            'id',
+                            "id",
                             models.AutoField(
                                 auto_created=True,
                                 primary_key=True,
                                 serialize=False,
-                                verbose_name='ID'
-                            )
+                                verbose_name="ID",
+                            ),
                         ),
+                        ("favorite_city", models.CharField(blank=True, max_length=64)),
                         (
-                            'favorite_city',
-                            models.CharField(blank=True, max_length=64)),
-                        (
-                            'user',
+                            "user",
                             models.OneToOneField(
                                 on_delete=django.db.models.deletion.CASCADE,
-                                to=settings.AUTH_USER_MODEL
-                            )
+                                to=settings.AUTH_USER_MODEL,
+                            ),
                         ),
                     ],
                 ),

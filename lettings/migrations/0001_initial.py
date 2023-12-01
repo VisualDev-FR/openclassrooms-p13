@@ -6,52 +6,93 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.SeparateDatabaseAndState(
             state_operations=[
                 migrations.CreateModel(
-                    name='Address',
+                    name="Address",
                     fields=[
-                        ('id', models.AutoField(auto_created=True,
-                                                primary_key=True, serialize=False, verbose_name='ID')),
-                        ('number', models.PositiveIntegerField(validators=[
-                            django.core.validators.MaxValueValidator(9999)])),
-                        ('street', models.CharField(max_length=64)),
-                        ('city', models.CharField(max_length=64)),
-                        ('state', models.CharField(max_length=2, validators=[
-                            django.core.validators.MinLengthValidator(2)])),
-                        ('zip_code', models.PositiveIntegerField(validators=[
-                            django.core.validators.MaxValueValidator(99999)])),
-                        ('country_iso_code', models.CharField(max_length=3,
-                                                              validators=[django.core.validators.MinLengthValidator(3)])),
+                        (
+                            "id",
+                            models.AutoField(
+                                auto_created=True,
+                                primary_key=True,
+                                serialize=False,
+                                verbose_name="ID",
+                            ),
+                        ),
+                        (
+                            "number",
+                            models.PositiveIntegerField(
+                                validators=[
+                                    django.core.validators.MaxValueValidator(9999)
+                                ]
+                            ),
+                        ),
+                        ("street", models.CharField(max_length=64)),
+                        ("city", models.CharField(max_length=64)),
+                        (
+                            "state",
+                            models.CharField(
+                                max_length=2,
+                                validators=[
+                                    django.core.validators.MinLengthValidator(2)
+                                ],
+                            ),
+                        ),
+                        (
+                            "zip_code",
+                            models.PositiveIntegerField(
+                                validators=[
+                                    django.core.validators.MaxValueValidator(99999)
+                                ]
+                            ),
+                        ),
+                        (
+                            "country_iso_code",
+                            models.CharField(
+                                max_length=3,
+                                validators=[
+                                    django.core.validators.MinLengthValidator(3)
+                                ],
+                            ),
+                        ),
                     ],
                 ),
             ],
             # Table already exists. See oc_lettings_site/migrations/0002_auto_20231123_1140.py
-            database_operations=[]
+            database_operations=[],
         ),
         migrations.SeparateDatabaseAndState(
             state_operations=[
                 migrations.CreateModel(
-                    name='Letting',
+                    name="Letting",
                     fields=[
-                        ('id', models.AutoField(auto_created=True,
-                                                primary_key=True, serialize=False, verbose_name='ID')),
-                        ('title', models.CharField(max_length=256)),
-                        ('address', models.OneToOneField(
-                            on_delete=django.db.models.deletion.CASCADE, to='lettings.Address')),
+                        (
+                            "id",
+                            models.AutoField(
+                                auto_created=True,
+                                primary_key=True,
+                                serialize=False,
+                                verbose_name="ID",
+                            ),
+                        ),
+                        ("title", models.CharField(max_length=256)),
+                        (
+                            "address",
+                            models.OneToOneField(
+                                on_delete=django.db.models.deletion.CASCADE,
+                                to="lettings.Address",
+                            ),
+                        ),
                     ],
                 ),
             ],
             # Table already exists. See oc_lettings_site/migrations/0002_auto_20231123_1140.py
-            database_operations=[]
+            database_operations=[],
         ),
-
-
     ]
