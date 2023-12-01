@@ -1,6 +1,11 @@
 import os
-
+import sentry_sdk
 from pathlib import Path
+
+sentry_sdk.init(
+    dsn=os.environ.get("OC_LETTING_SENTRY_KEY"),
+    enable_tracing=True,
+)
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = Path(__file__).resolve().parent.parent
