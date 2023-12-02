@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+import logging
 
 from profiles.models import Profile
 
@@ -28,6 +29,11 @@ def profile(request, username):
     username: str
         the username of the Profile to display
     """
-    profile = Profile.objects.get(user__username=username)
-    context = {"profile": profile}
-    return render(request, "profiles/profile.html", context)
+    try:
+        profile = Profile.objects.get(user__username=username)
+        context = {"profile": profile}
+        return render(request, "profiles/profile.html", context)
+
+    except Exception as e:
+        logging.error(f"error while accessing {username} : {str(e)}")
+        return redirect("profiles:index")
