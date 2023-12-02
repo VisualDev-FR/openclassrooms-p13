@@ -1,11 +1,35 @@
 import os
 import sentry_sdk
+import logging
+from sentry_sdk.integrations.logging import (
+    LoggingIntegration,
+)
 from pathlib import Path
 
 sentry_sdk.init(
     dsn=os.environ.get("OC_LETTING_SENTRY_KEY"),
     enable_tracing=True,
+    integrations=[
+        LoggingIntegration(
+            level=logging.INFO,
+            event_level=logging.ERROR,
+        ),
+    ],
 )
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+        },
+    },
+    "root": {
+        "handlers": ["console"],
+        "level": "INFO",
+    },
+}
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = Path(__file__).resolve().parent.parent
