@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+import logging
 
 from lettings.models import Letting
 
@@ -32,9 +33,15 @@ def letting(request, letting_id):
     Args:
     * `letting_id`: the id of the letting to diplay.
     """
-    letting = Letting.objects.get(id=letting_id)
-    context = {
-        "title": letting.title,
-        "address": letting.address,
-    }
-    return render(request, "lettings/letting.html", context)
+
+    try:
+        letting = Letting.objects.get(id=letting_id)
+        context = {
+            "title": letting.title,
+            "address": letting.address,
+        }
+        return render(request, "lettings/letting.html", context)
+
+    except Exception as e:
+        logging.error(f"error while accessing {letting_id} : {e}")
+        return redirect("lettings:index")

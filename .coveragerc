@@ -9,5 +9,6 @@ omit =
     */asgi.py
     */wsgi.py
     */tests.py
+    */settings.py
     manage.py
     conftest.py

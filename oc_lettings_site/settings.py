@@ -1,16 +1,44 @@
 import os
-
+import sentry_sdk
+import logging
+from sentry_sdk.integrations.logging import (
+    LoggingIntegration,
+)
 from pathlib import Path
+
+sentry_sdk.init(
+    dsn=os.environ.get("OC_LETTING_SENTRY_KEY"),
+    enable_tracing=True,
+    integrations=[
+        LoggingIntegration(
+            level=logging.INFO,
+            event_level=logging.ERROR,
+        ),
+    ],
+)
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+        },
+    },
+    "root": {
+        "handlers": ["console"],
+        "level": "INFO",
+    },
+}
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "fp$9^593hsriajg$_%=5trot9g!1qa@ew(o-1#@=&4%=hp46(s"
+SECRET_KEY = os.environ.get("OC_LETTING_SK")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
