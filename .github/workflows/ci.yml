@@ -24,6 +24,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements-dev.txt
 
+      - name: Check PEP8
+        run: |
+          python -m flake8
+
       - name: Run tests
         env:
           OC_LETTING_SK: ${{ secrets.OC_LETTING_SK }}
