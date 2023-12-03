@@ -9,3 +9,4 @@ services:
     environment:
       - OC_LETTING_SENTRY_KEY=${OC_LETTING_SENTRY_KEY}
       - OC_LETTING_SK=${OC_LETTING_SK}
+      - DJANGO_DEBUG=0
