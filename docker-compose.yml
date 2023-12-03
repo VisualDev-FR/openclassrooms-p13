@@ -1,0 +1,11 @@
+version: '3.9'
+services:
+  web:
+    tty: true
+    image: oc_lettings
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - OC_LETTING_SENTRY_KEY=${OC_LETTING_SENTRY_KEY}
+      - OC_LETTING_SK=${OC_LETTING_SK}
