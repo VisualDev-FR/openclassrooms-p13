@@ -27,4 +27,4 @@ jobs:
       - name: Run tests
         env:
           OC_LETTING_SK: ${{ secrets.OC_LETTING_SK }}
-        run: pytest
+        run: pytest --cov-config=.coveragerc --cov=. --cov-fail-under=80
