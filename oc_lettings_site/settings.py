@@ -12,7 +12,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.environ.get("OC_LETTING_SK")
 SENTRY_DSN = os.environ.get("OC_LETTING_SENTRY_KEY")
-DEBUG = bool(os.environ.get("DJANGO_DEBUG"))
+DEBUG = bool(int(os.environ.get("DJANGO_DEBUG")))
 
 ALLOWED_HOSTS = ["127.0.0.1", "0.0.0.0", "localhost"]
 
