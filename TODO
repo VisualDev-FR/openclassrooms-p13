@@ -5,4 +5,7 @@ objectifs pour le 01/12/2023:
 objectifs pour le 08/12/2023:
     ✔ finir l'etape 3 @done(23-12-03 18:45)
     ✔ ajouter l'update de pip dans la CI / dans le dockerfile @done(23-12-03 19:42)
-    ☐ debugger le container
+    ✔ debugger le container @done(23-12-08 14:04)
+    ✔ pusher l'image latest dans la ci @done(23-12-08 15:13)
+    ☐ mettre en place la ci des branches autres que master
+    ☐ faire le tour des specs de la ci

@@ -53,9 +53,15 @@ jobs:
 
       - name: Build and push Docker image
         run: |
+
+          # build and push the image tagged with commit hash
           docker build \
           --push \
-          -t tmenanteau/oc_lettings:${{ github.sha }} \
+          --tag tmenanteau/oc_lettings:${{ github.sha }} \
           --build-arg OC_LETTING_SENTRY_KEY="${{ secrets.OC_LETTING_SENTRY_KEY }}" \
           --build-arg OC_LETTING_SK="${{ secrets.OC_LETTING_SK }}" \
           .
+
+          # tag the image as the latest version
+          docker tag tmenanteau/oc_lettings:${{ github.sha }}  tmenanteau/oc_lettings:latest
+          docker push tmenanteau/oc_lettings:latest
