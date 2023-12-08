@@ -31,6 +31,7 @@ jobs:
       - name: Run tests
         env:
           OC_LETTING_SK: ${{ secrets.OC_LETTING_SK }}
+          DJANGO_DEBUG: 1
         run: pytest --cov-config=.coveragerc --cov=. --cov-fail-under=80
 
   build_docker:
