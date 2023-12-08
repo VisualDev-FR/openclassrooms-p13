@@ -3,5 +3,6 @@ objectifs pour le 01/12/2023:
     ✔ finir l'étape 2 @done(23-12-01 16:50)
 
 objectifs pour le 08/12/2023:
-    ☐ finir l'etape 3
-    ☐ avancer l'etape 4
+    ✔ finir l'etape 3 @done(23-12-03 18:45)
+    ✔ ajouter l'update de pip dans la CI / dans le dockerfile @done(23-12-03 19:42)
+    ☐ debugger le container
