@@ -1,0 +1,27 @@
+version: '3.9'
+
+services:
+
+    web:
+        volumes:
+            - static:/static
+        build:
+            context: .
+        environment:
+            - OC_LETTING_SENTRY_KEY=$OC_LETTING_SENTRY_KEY
+            - OC_LETTING_SK=$OC_LETTING_SK
+            - DJANGO_DEBUG=0
+        ports:
+            - "8000:8000"
+
+    nginx:
+        build: ./nginx
+        volumes:
+            - static:/static
+        ports:
+            - "8080:80"
+        depends_on:
+            - web
+
+volumes:
+    static:
