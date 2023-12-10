@@ -6,6 +6,8 @@ COPY . .
 
 VOLUME [ "/app" ]
 
+EXPOSE 8000
+
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
@@ -19,6 +21,6 @@ ENV OC_LETTING_SENTRY_KEY=$OC_LETTING_SENTRY_KEY
 ENV OC_LETTING_SK=$OC_LETTING_SK
 ENV DJANGO_DEBUG=0
 
-EXPOSE 8000
+RUN python manage.py collectstatic --noinput
 
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
