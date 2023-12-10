@@ -14,7 +14,7 @@ SECRET_KEY = os.environ.get("OC_LETTING_SK")
 SENTRY_DSN = os.environ.get("OC_LETTING_SENTRY_KEY")
 DEBUG = int(os.environ.get("DJANGO_DEBUG", default=0))
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["0.0.0.0", "localhost", "oc-lettings-1257.onrender.com"]
 
 # Logging
 
