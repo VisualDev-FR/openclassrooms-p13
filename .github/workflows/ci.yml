@@ -65,3 +65,11 @@ jobs:
           # tag the image as the latest version
           docker tag tmenanteau/oc_lettings:${{ github.sha }}  tmenanteau/oc_lettings:latest
           docker push tmenanteau/oc_lettings:latest
+
+  deploy:
+    needs: build_docker
+    runs-on: ubuntu-latest
+    steps:
+      - name: deploy
+        run: |
+          curl "${{ secrets.RENDER_DEPLOY_HOOK_URL }}"
