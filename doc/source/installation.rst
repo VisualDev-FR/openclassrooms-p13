@@ -39,7 +39,7 @@ Create the Virtual Environment
 - Create a new virtual env
 .. code:: bash
 
-    cd /path/to/Python-OC-Lettings-FR
+    cd /path/to/cloned/repo
 
 .. code:: bash
 
@@ -65,7 +65,7 @@ Run the site
 ----
 .. code:: bash
 
-    cd /path/to/Python-OC-Lettings-FR`
+    cd /path/to/cloned/repo
 
 .. code:: bash
 
@@ -82,12 +82,33 @@ Run the site
 - Go to `http://localhost:8000` in a browser.
 - Confirm that the site is working, and you can navigate (you should see several profiles and locations).
 
+Build and run the docker image
+----
+.. code:: bash
+
+    cd /path/to/cloned/repo
+
+- Build the docker image
+.. code:: bash
+
+    docker build
+    --no-cache
+    --tag <your_image_name>
+    --build-arg OC_LETTING_SENTRY_KEY="$OC_LETTING_SENTRY_KEY"
+    --build-arg OC_LETTING_SK="$OC_LETTING_SK"
+    .
+
+- Run the builded image
+.. code:: bash
+
+    docker run -p 8000:8000 <your_image_name>
+
 Linting
 ----
 
 .. code:: bash
 
-    cd /path/to/Python-OC-Lettings-FR
+    cd /path/to/cloned/repo
 
 .. code:: bash
 
@@ -102,7 +123,7 @@ Unit Tests
 
 .. code:: bash
 
-    cd /path/to/Python-OC-Lettings-FR
+    cd /path/to/cloned/repo
 
 .. code:: bash
 
