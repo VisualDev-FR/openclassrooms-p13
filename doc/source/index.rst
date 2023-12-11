@@ -18,11 +18,3 @@ Welcome to oc_lettings's documentation!
    api_references.rst
    using_guide.rst
    deploy.rst
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
