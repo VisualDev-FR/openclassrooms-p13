@@ -11,8 +11,8 @@ Welcome to oc_lettings's documentation!
    :caption: Contents:
 
    overview.rst
-   quickstart.rst
    technologies.rst
+   quickstart.rst
    database.rst
    api_references.rst
    using_guide.rst
