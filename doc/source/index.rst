@@ -11,7 +11,6 @@ Welcome to oc_lettings's documentation!
    :caption: Contents:
 
    overview.rst
-   installation.rst
    quickstart.rst
    technologies.rst
    database.rst
