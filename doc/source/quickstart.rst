@@ -1,13 +1,14 @@
 Quickstart
 ====
 
+.. _prerequisites:
 Prerequisites
 ----
 
 Accounts:
 
 - `GitHub <https://github.com/>`_ account with read access to `this repository <https://github.com/VisualDev-FR/openclassrooms-p13>`_
-- `Sentry.io" <https://sentry.io/>`_ account, with a project configured for the oc_lettings app
+- `Sentry.io <https://sentry.io/>`_ account, with a project configured for the oc_lettings app
 
 Softwares:
 
@@ -86,7 +87,7 @@ Run the site with Django
 Run the site with Docker
 ----
 
-As an alternative to run the site with django, you can build an run a docker container.
+As an alternative to run the site with django, you can build and run a docker container.
 
 .. code:: bash
 
