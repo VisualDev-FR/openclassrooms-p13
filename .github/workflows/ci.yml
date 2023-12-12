@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [ "*" ]
   pull_request:
     branches: [ master ]
 
@@ -37,6 +37,7 @@ jobs:
   build_docker:
     needs: build_app
     runs-on: ubuntu-latest
+    if: github.event.ref == 'refs/heads/master'
 
     steps:
       - name: Checkout code
@@ -69,6 +70,8 @@ jobs:
   deploy:
     needs: build_docker
     runs-on: ubuntu-latest
+    if: github.event.ref == 'refs/heads/master'
+
     steps:
       - name: deploy
         run: |
