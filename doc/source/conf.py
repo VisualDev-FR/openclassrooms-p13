@@ -11,6 +11,8 @@ BASE_DIR = pathlib.Path(__file__).resolve().parents[2].resolve().as_posix()
 REPORT = BASE_DIR + "/reports/"
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "oc_lettings_site.settings")
+os.environ.setdefault("OC_LETTING_SK", "dummy_secret_key")
+
 sys.path.insert(0, pathlib.Path(__file__).parents[2].resolve().as_posix())
 sys.path.insert(1, "/oc_lettings_site/")
 sys.path.insert(1, "/lettings/")

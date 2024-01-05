@@ -9,8 +9,13 @@ objectifs pour le 08/12/2023:
     ✔ pusher l'image latest dans la ci @done(23-12-08 15:13)
 
 objectifs pour le 15/12/2023:
-    ☐ mettre en place la ci des branches autres que master
-    ☐ faire le tour des specs de la ci
+    ✔ mettre en place la ci des branches autres que master @done(23-12-15 16:24)
+    ✔ faire le tour des specs de la ci @done(23-12-15 16:24)
+
+objectifs pour le 05/01/2024:
     ☐ laisser la possibilité de raise une erreur pour la soutenance
-    ☐ mettre en place la doc du projet
     ☐ mettre à jour le readme
+    ☐ détailler le fonctionnement de la ci dans la doc
+    ☐ mettre en ligne la doc
+    ☐ documenter le pipeline CI/CD dans le readme
+    ☐ checker l'exigence suivante : le projet Sentry de la base de données est accessible à des utilisateurs spécifiques
