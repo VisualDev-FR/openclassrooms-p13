@@ -147,11 +147,3 @@ Test Coverage
 .. code:: bash
 
     pytest --cov-config=setup.cfg --cov=. --cov-report html
-
-
-Administration Panel
-----
-
-- :ref:`run_django` or :ref:`run_docker`
-- Go to http://localhost:8000/admin
-- Log in with the user **admin**, password **Abc1234!**
