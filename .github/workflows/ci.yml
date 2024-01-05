@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [ "*" ]
   pull_request:
     branches: [ master ]
 
@@ -32,11 +32,12 @@ jobs:
         env:
           OC_LETTING_SK: ${{ secrets.OC_LETTING_SK }}
           DJANGO_DEBUG: 1
-        run: pytest --cov-config=.coveragerc --cov=. --cov-fail-under=80
+        run: pytest --cov-config=setup.cfg --cov=. --cov-fail-under=80
 
   build_docker:
     needs: build_app
     runs-on: ubuntu-latest
+    if: github.event.ref == 'refs/heads/master'
 
     steps:
       - name: Checkout code
@@ -69,6 +70,8 @@ jobs:
   deploy:
     needs: build_docker
     runs-on: ubuntu-latest
+    if: github.event.ref == 'refs/heads/master'
+
     steps:
       - name: deploy
         run: |

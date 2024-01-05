@@ -5,33 +5,27 @@ from django.core.validators import MaxValueValidator, MinLengthValidator
 class Address(models.Model):
     """
     Data object storing all address details
-
-    Attributes
-    -------
-    number: int
-        the street number of the address
-
-    street: str
-        the street of the address
-
-    state: str
-        the state of the address (2 digits)
-
-    zip_code: int
-        the zip code of the address (int between 0 and 99999)
-
-    country_iso_code: str
-        iso code of the address's country (3 chars)
     """
 
     number = models.PositiveIntegerField(validators=[MaxValueValidator(9999)])
+    """ the street number of the address """
+
     street = models.CharField(max_length=64)
+    """ the street of the address """
+
     city = models.CharField(max_length=64)
+    """ the city of the address """
+
     state = models.CharField(max_length=2, validators=[MinLengthValidator(2)])
+    """ the state of the address (2 digits) """
+
     zip_code = models.PositiveIntegerField(validators=[MaxValueValidator(99999)])
+    """ the zip code of the address (int between 0 and 99999) """
+
     country_iso_code = models.CharField(
         max_length=3, validators=[MinLengthValidator(3)]
     )
+    """ iso code of the address's country (3 chars) """
 
     def __str__(self):
         """
@@ -46,18 +40,12 @@ class Address(models.Model):
 class Letting(models.Model):
     """
     Data object storing letting informations
-
-    Attributes
-    -------
-    title : str
-        the title of the letting
-
-    address : Address
-        A reference to an Address object
     """
 
     title = models.CharField(max_length=256)
+    """ the title of the letting """
     address = models.OneToOneField(Address, on_delete=models.CASCADE)
+    """ A reference to an Address object """
 
     def __str__(self):
         """
