@@ -1,6 +1,4 @@
-from django.shortcuts import render, redirect
-import logging
-
+from django.shortcuts import render
 from profiles.models import Profile
 
 
