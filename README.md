@@ -4,6 +4,8 @@ This project encompasses a straightforward web application designed to showcase 
 
 Full documentation of the project is available [here](https://openclassrooms-p13.readthedocs.io/en/latest/index.html)
 
+The application is deployed and available [here](https://oc-lettings-1257.onrender.com)
+
 ## Local developement
 
 ### Prerequisites
