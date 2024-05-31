@@ -15,7 +15,5 @@ objectifs pour le 15/12/2023:
 objectifs pour le 05/01/2024:
     ✔ mettre en ligne la doc @done(24-01-05 12:57)
     ✔ laisser la possibilité de raise une erreur pour la soutenance @done(24-01-05 13:03)
-    ☐ mettre à jour le readme
-    ☐ détailler le fonctionnement de la ci dans la doc
-    ☐ documenter le pipeline CI/CD dans le readme
-    ☐ checker l'exigence suivante : le projet Sentry de la base de données est accessible à des utilisateurs spécifiques
+    ✔ mettre à jour le readme @done(24-01-05 13:24)
+    ✘ documenter le pipeline CI/CD dans le readme @cancelled(24-01-05 13:26)
