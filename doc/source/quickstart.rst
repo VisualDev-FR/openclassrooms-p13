@@ -78,6 +78,10 @@ Run the site with Django
 
 .. code:: bash
 
+    python manage.py collectstatic
+
+.. code:: bash
+
     python manage.py runserver 0.0.0.0:8000
 
 - Go to http://localhost:8000 in a browser.
@@ -147,11 +151,3 @@ Test Coverage
 .. code:: bash
 
     pytest --cov-config=setup.cfg --cov=. --cov-report html
-
-
-Administration Panel
-----
-
-- :ref:`run_django` or :ref:`run_docker`
-- Go to http://localhost:8000/admin
-- Log in with the user **admin**, password **Abc1234!**
