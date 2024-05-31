@@ -40,6 +40,7 @@ To deactivate the environment ``deactivate``
 - `cd /path/to/cloned/repo`
 - `source venv/bin/activate`
 - `pip install --requirement requirements-dev.txt`
+- `python manage.py collectstatic`
 - `python manage.py runserver 0.0.0.0:8000`
 
 Go to http://localhost:8000 in a browser, and then confirm that the site is working, and you can navigate (you should see several profiles and locations).
