@@ -1,0 +1,1 @@
+pytest --cov-config=setup.cfg --cov=. --cov-fail-under=80
